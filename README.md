@@ -50,4 +50,6 @@ An end-to-end starter for fine-tuning a small Hugging Face classifier with PEFT/
 
 6. Add the GitHub repository variables and secrets documented in `.github/workflows/ci-cd.yml` before enabling CI/CD.
 
+For deployment approval, create a GitHub environment named `production` and add required reviewers under **Settings > Environments > production > Deployment protection rules**. The `deploy` job pauses until an approved reviewer releases it.
+
 The included files are deliberately small scaffolds. Replace the sample dataset and labels, then add evaluation gates and approval before production promotion.
