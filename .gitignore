@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.azureml/
+mlruns/
+data/raw/*
+!data/raw/.gitkeep
+outputs/
+.DS_Store

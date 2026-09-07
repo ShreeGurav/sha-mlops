@@ -1,0 +1,20 @@
+$schema: https://azuremlschemas.azureedge.net/latest/commandJob.schema.json
+code: ../src
+command: >-
+  python train.py
+  --input-data ${{inputs.training_data}}
+  --output-dir ${{outputs.model}}
+  --base-model distilbert-base-uncased
+inputs:
+  training_data:
+    type: uri_file
+    path: azureml:tickets:1
+outputs:
+  model:
+    type: uri_folder
+    mode: rw_mount
+environment: azureml:hf-peft-training:1
+compute: azureml:cpu-cluster
+experiment_name: support-ticket-classification
+resources:
+  instance_count: 1

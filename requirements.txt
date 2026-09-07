@@ -1,0 +1,10 @@
+azure-ai-ml>=1.20,<2
+azure-identity>=1.17,<2
+datasets>=2.20,<3
+mlflow>=2.14,<3
+pandas>=2.2,<3
+peft>=0.12,<1
+torch>=2.2,<3
+transformers>=4.44,<5
+fastapi>=0.112,<1
+uvicorn[standard]>=0.30,<1

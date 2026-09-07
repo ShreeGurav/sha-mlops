@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue
+endpoint_name: support-ticket-endpoint
+model: azureml:support-ticket-classifier:1
+code_configuration:
+  code: ../src
+  scoring_script: score.py
+environment: azureml:hf-peft-training:1
+instance_type: Standard_DS3_v2
+instance_count: 1
