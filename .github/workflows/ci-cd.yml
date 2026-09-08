@@ -47,6 +47,8 @@ jobs:
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
       - name: Install Azure ML CLI extension
         run: az extension add --name ml --yes
+      - name: Register AML environment
+        run: az ml environment create --file aml/environment.yml --resource-group "$AZURE_RESOURCE_GROUP" --workspace-name "$AZURE_ML_WORKSPACE"
       - name: Submit AML training job
         run: az ml job create --file aml/job.yml --resource-group "$AZURE_RESOURCE_GROUP" --workspace-name "$AZURE_ML_WORKSPACE" --set inputs.training_data.path="azureml:tickets:1"
       - name: Deploy managed endpoint
