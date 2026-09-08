@@ -13,7 +13,7 @@ outputs:
   model:
     type: uri_folder
     mode: rw_mount
-environment: azureml:hf-peft-training:1
+environment: azureml:hf-peft-training:2
 compute: azureml:cpu-cluster
 experiment_name: support-ticket-classification
 resources:
